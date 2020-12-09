@@ -1,7 +1,13 @@
-﻿using Data.Context;
+﻿using Data;
+using Data.Context;
+using Data.IRepository;
+using Data.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Service;
+using Service.IService;
+using Service.Service;
 using System;
 using System.IO;
 using System.Reflection;
@@ -32,16 +38,20 @@ namespace UI
         private void ConfigureServices(IServiceCollection services)
         {
             Assembly appServiceAssembly = Assembly.GetExecutingAssembly();
-            services.Scan(scan => scan
-                .FromAssemblies(appServiceAssembly)
-                .AddClasses(classes => classes.Where(t => t.Name.EndsWith("repository", StringComparison.OrdinalIgnoreCase)))
-                .AsImplementedInterfaces()
-                .WithTransientLifetime());//注册的生命周期为 Transient
-            services.Scan(scan => scan
-                .FromAssemblies(appServiceAssembly)
-                .AddClasses(classes => classes.Where(t => t.Name.EndsWith("service", StringComparison.OrdinalIgnoreCase)))
-                .AsImplementedInterfaces()
-                .WithTransientLifetime());//注册的生命周期为 Transient
+
+            services.AddScoped(
+                typeof(IRepository<>),
+                typeof(Repository<>));
+            services.AddScoped(
+                typeof(IService<>),
+                typeof(Service<>));
+
+            //services.AddScoped<IUsersRepository, UsersRepository>();
+
+            //services.AddScoped<IUsersService, UsersService>();
+            services.AddMyAppRepository();
+            services.AddMyAppServices();
+
             services.AddDbContext<MeadowContext>(options => options.UseSqlServer(configuration.GetConnectionString("SqlConnection")));
             services.AddTransient(typeof(MainWindow));
         }

@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{279B2F6A-2232-4541-8BDE-29ACF64DB752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{279B2F6A-2232-4541-8BDE-29ACF64DB752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{4C2AE37C-9F4C-4326-BFA5-518BEEAC5996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{4C2AE37C-9F4C-4326-BFA5-518BEEAC5996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{9EA6AFC4-41F7-4926-AC66-BB070080776C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{9EA6AFC4-41F7-4926-AC66-BB070080776C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{32DF2854-BA64-4257-9921-4A55CE6ECEE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI", "UI\UI.csproj", "{32DF2854-BA64-4257-9921-4A55CE6ECEE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E7BE1651-98AD-44AF-B7C9-D37FD100C60D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E7BE1651-98AD-44AF-B7C9-D37FD100C60D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenApi", "OpenApi\OpenApi.csproj", "{5AFB8806-5298-4BB4-B588-EBF8D885D1A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{E7BE1651-98AD-44AF-B7C9-D37FD100C60D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7BE1651-98AD-44AF-B7C9-D37FD100C60D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7BE1651-98AD-44AF-B7C9-D37FD100C60D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFB8806-5298-4BB4-B588-EBF8D885D1A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFB8806-5298-4BB4-B588-EBF8D885D1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFB8806-5298-4BB4-B588-EBF8D885D1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFB8806-5298-4BB4-B588-EBF8D885D1A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

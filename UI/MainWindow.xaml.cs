@@ -1,4 +1,6 @@
 ﻿using Data.Context;
+using Domain.Entity;
+using Service.IService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +23,18 @@ namespace UI
     /// </summary>
     public partial class MainWindow : Window
     {
+        public IUsersService usersService;
         public MeadowContext meadowContext;
 
-        public MainWindow(MeadowContext meadowContext)
+        public MainWindow(MeadowContext _meadowContext,IUsersService _usersService)
         {
-            this.meadowContext = meadowContext;
+            this.meadowContext = _meadowContext;
+            this.usersService = _usersService;
+            UsersEntity usersEntity = new UsersEntity();
+            usersEntity.NickName = "陈";
+            usersEntity.Account = "chen";
+            usersEntity.Password = "123456";
+            usersService.Create(usersEntity);
             InitializeComponent();
         }
     }
