@@ -44,8 +44,8 @@ namespace UI
 
         private async void Get_Click(object sender, RoutedEventArgs e)
         {
-            var result = await usersService.Get(Guid.Parse("C6C45844-FE21-455C-5964-08D89C16191D"));
-            this.Result.Content = result.Account;
+            var result = await usersService.GetName(Guid.Parse("C6C45844-FE21-455C-5964-08D89C16191D"));
+            this.Result.Content = result;
         }
     }
 }
