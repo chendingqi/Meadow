@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:UI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <WrapPanel>
         <Button Width="100" Height="50" Name="Add" Content="新增" Click="Button_Click"/>
-        <Button Width="100" Height="50" x:Name="Get" Content="获取" Click="Get_Click" Margin="350,279,350,106"/>
-        <Label Name="Result" Width="100" Height="50" VerticalAlignment="Top"></Label>
-    </Grid>
+        <Button Width="100" Height="50" x:Name="Get" Content="获取" Click="Get_Click" HorizontalAlignment="Left"/>
+        <Label Name="Result" Width="100" Height="50" BorderBrush="Black" BorderThickness="1"></Label>
+    </WrapPanel>
 </Window>
