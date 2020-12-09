@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Button Width="100" Height="50" Name="Add" Content="新增" Click="Button_Click"/>
+        <Button Width="100" Height="50" x:Name="Get" Content="获取" Click="Get_Click" Margin="350,279,350,106"/>
+        <Label Name="Result" Width="100" Height="50" VerticalAlignment="Top"></Label>
     </Grid>
 </Window>

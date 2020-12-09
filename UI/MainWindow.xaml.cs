@@ -24,18 +24,28 @@ namespace UI
     public partial class MainWindow : Window
     {
         public IUsersService usersService;
-        public MeadowContext meadowContext;
 
-        public MainWindow(MeadowContext _meadowContext,IUsersService _usersService)
+        public MainWindow(IUsersService _usersService)
         {
-            this.meadowContext = _meadowContext;
             this.usersService = _usersService;
-            UsersEntity usersEntity = new UsersEntity();
-            usersEntity.NickName = "陈";
-            usersEntity.Account = "chen";
-            usersEntity.Password = "123456";
-            usersService.Create(usersEntity);
             InitializeComponent();
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UsersEntity usersEntity = new UsersEntity
+            {
+                NickName = "陈",
+                Account = "chen",
+                Password = "123456"
+            };
+            await usersService.Create(usersEntity);
+        }
+
+        private async void Get_Click(object sender, RoutedEventArgs e)
+        {
+            var result = await usersService.Get(Guid.Parse("C6C45844-FE21-455C-5964-08D89C16191D"));
+            this.Result.Content = result.Account;
         }
     }
 }
