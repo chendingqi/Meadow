@@ -2,11 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Infrastructure</AssemblyName>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="RabbitMqExtend\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
