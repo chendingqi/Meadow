@@ -8,5 +8,6 @@ namespace Data.IRepository
 {
     public interface IUsersRepository : IRepository<UsersEntity>
     {
+        string getname();
     }
 }
